@@ -4,29 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tres En Raya</title>
-    <script src="../pw_u1_px_jl/js/funcionalidad.js"></script>
-    <link rel="stylesheet" href="../pw_u1_px_jl/css/estilo.css" />
+    <script src="../js/funcionalidad.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Tres En Raya</h1>
+        <h1 id="id_titulo">Tres En Raya</h1>
+        <div></div>
       </header>
       <nav></nav>
       <section>
         <div class="regilla">
           <!-- Display de tabla 3x3 con labels -->
-          <label id="input1" for="input1"> 1x1</label>
-          <label id="input2" for="input2"> 1x2</label>
-          <label id="input3" for="input3"> 1x3</label>
-          <div></div>
-          <label id="input4" for="input4"> 2x1</label>
-          <label id="input5" for="input5"> 2x2</label>
-          <label id="input6" for="input6"> 2x3</label>
-          <div></div>
-          <label id="input7" for="input7"> 3x1</label>
-          <label id="input8" for="input8"> 3x2</label>
-          <label id="input9" for="input9"> 3x3</label>
+          <label id="input1x1" for="input1"> 1x1</label>
+          <label id="input1x2" for="input2"> 1x2</label>
+          <label id="input1x3" for="input3"> 1x3</label>
+
+          <label id="input2x1" for="input4"> 2x1</label>
+          <label id="input2x2" for="input5"> 2x2</label>
+          <label id="input2x3" for="input6"> 2x3</label>
+
+          <label id="input3x1" for="input7"> 3x1</label>
+          <label id="input3x2" for="input8"> 3x2</label>
+          <label id="input3x3" for="input9"> 3x3</label>
         </div>
 
         <div class="ingresos">
@@ -40,7 +41,7 @@
             <input id="id_columna" type="number" min="1" max="3" />
           </label>
           <div></div>
-          <button id="verButton">VER</button>
+          <button onclick="colocar()" id="verButton">VER</button>
         </div>
       </section>
       <footer></footer>

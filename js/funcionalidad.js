@@ -1,38 +1,63 @@
-document.querySelector(".verButton").addEventListener("click", handleClick);
+let x = 0;
+let o = 0;
 
-function handleClick() {
-  let fila = getFila();
-  let columna = getColumna();
+function colocar() {
+  sumar();
+  parSum();
+  reemplazarLabelPorBoton();
 
-  if (esValido(fila, columna)) {
-    reemplazarLabelConBoton(fila, columna);
-  } else {
-    alert("Valores inválidos");
+  if (x === 3) {
+    let texto = document.getElementById("id_titulo");
+    let nuevotexto = document.createElement("button");
+    nuevotexto.textContent = "Gadador X";
+    texto.parentNode.replaceChild(nuevotexto, texto);
+  } else if (o === 3) {
+    let texto = document.getElementById("id_titulo");
+    let nuevotexto = document.createElement("button");
+    nuevotexto.textContent = "Gadador O";
+    texto.parentNode.replaceChild(nuevotexto, texto);
   }
 }
 
-function getFila() {
-  return parseInt(document.querySelector(".id_fila").value);
+function sumar() {
+  let filaval = document.getElementById("id_fila");
+  let columnaval = document.getElementById("id_columna");
+  let fila = parseInt(filaval.value);
+  let columna = parseInt(columnaval.value);
+  let sumaval = fila + columna;
+  console.log(sumaval);
+  console.log(parSum());
+  return sumaval;
 }
 
-function getColumna() {
-  return parseInt(document.querySelector(".id_columna").value);
+function parSum() {
+  let filaval = document.getElementById("id_fila");
+  let columnaval = document.getElementById("id_columna");
+  let fila = parseInt(filaval.value);
+  let columna = parseInt(columnaval.value);
+  let sumaval = fila + columna;
+  return sumaval % 2 === 0;
 }
 
-function esValido(fila, columna) {
-  return fila >= 1 && fila <= 3 && columna >= 1 && columna <= 3;
+function XoO() {
+  if (parSum()) {
+    x = x + 1;
+    return "X";
+  } else {
+    return "O";
+    o = o + 1;
+  }
 }
 
-function reemplazarLabelConBoton(fila, columna) {
-  let id = "input" + ((fila - 1) * 3 + columna);
-  let label = document.getElementById(id);
-  let nuevoButton = crearBoton();
-  label.parentNode.replaceChild(nuevoButton, label);
-}
-
-function crearBoton() {
-  let boton = document.createElement("button");
-  boton.innerHTML = "Marcado";
-  boton.classList.add("button");
-  return boton;
+function reemplazarLabelPorBoton() {
+  const id =
+    "input" +
+    document.getElementById("id_fila").value +
+    "x" +
+    document.getElementById("id_columna").value;
+  console.log(id);
+  const label = document.getElementById(id);
+  const boton = document.createElement("button");
+  boton.textContent = XoO();
+  label.parentNode.replaceChild(boton, label);
 }
