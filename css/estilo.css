@@ -1,0 +1,77 @@
+body {
+  background: #032236;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 1px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aquamarine;
+}
+
+header h1 {
+  text-align: center;
+  color: #cebdbd;
+  margin-bottom: 20px;
+}
+
+.regilla {
+  display: grid;
+  grid-template-columns: 45px 45px 45px;
+  gap: 10px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #48a6e4;
+  box-shadow: 5px 10px #0f4c75;
+}
+
+.regilla label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #022238;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+}
+
+.ingresos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ingresos label {
+  color: white;
+  font-size: 16px;
+}
+
+.ingresos input {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #034774;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #023b52;
+}
